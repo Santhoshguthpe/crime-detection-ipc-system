@@ -1,0 +1,262 @@
+{
+  "murder": {
+    "section": "Section 302 IPC",
+    "punishment": "Death penalty or life imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 25,
+    "description": "Intentional and unlawful killing of a person with clear intention or knowledge."
+  },
+
+  "attempt to murder": {
+    "section": "Section 307 IPC",
+    "punishment": "Up to 10 years imprisonment or life imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 10,
+    "description": "An act done with intention to cause death but the victim survives."
+  },
+
+  "culpable homicide": {
+    "section": "Section 304 IPC",
+    "punishment": "Life imprisonment or up to 10 years and fine",
+    "bailable": "Depends on part",
+    "cognizable": "Yes",
+    "max_years": 10,
+    "description": "Causing death without full intention to commit murder."
+  },
+
+  "hurt": {
+    "section": "Section 323 IPC",
+    "punishment": "Up to 1 year imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 1,
+    "description": "Causing simple physical injury to another person."
+  },
+
+  "grievous hurt": {
+    "section": "Section 325 IPC",
+    "punishment": "Up to 7 years imprisonment and fine",
+    "bailable": "Depends",
+    "cognizable": "Yes",
+    "max_years": 7,
+    "description": "Causing serious injury like fracture, permanent damage or loss of limb."
+  },
+
+  "kidnapping": {
+    "section": "Section 363 IPC",
+    "punishment": "Up to 7 years imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 7,
+    "description": "Taking a minor or person away without lawful consent."
+  },
+
+  "abduction": {
+    "section": "Section 362 IPC (Definition)",
+    "punishment": "Punishment depends on purpose of abduction",
+    "bailable": "Depends",
+    "cognizable": "Yes",
+    "max_years": 7,
+    "description": "Forcibly taking or compelling a person to move from one place to another."
+  },
+
+  "rape": {
+    "section": "Section 376 IPC",
+    "punishment": "Minimum 10 years to life imprisonment",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Sexual intercourse without free and voluntary consent."
+  },
+
+  "sexual harassment": {
+    "section": "Section 354A IPC",
+    "punishment": "Up to 3 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Unwelcome sexual advances, demands or inappropriate physical contact."
+  },
+
+  "stalking": {
+    "section": "Section 354D IPC",
+    "punishment": "Up to 3 years (first offence), 5 years (subsequent offence)",
+    "bailable": "Yes (first offence)",
+    "cognizable": "Yes",
+    "max_years": 5,
+    "description": "Repeatedly following or contacting a person against their will."
+  },
+
+  "dowry death": {
+    "section": "Section 304B IPC",
+    "punishment": "Minimum 7 years to life imprisonment",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Death of a married woman due to dowry-related harassment."
+  },
+
+  "domestic violence": {
+    "section": "Protection of Women from Domestic Violence Act, 2005",
+    "punishment": "Protection order, fine or imprisonment (breach may lead to jail up to 1 year)",
+    "bailable": "Depends",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Physical, emotional, verbal or economic abuse within domestic relationship."
+  },
+
+  "theft": {
+    "section": "Section 379 IPC",
+    "punishment": "Up to 3 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Dishonestly taking movable property without permission."
+  },
+
+  "robbery": {
+    "section": "Section 392 IPC",
+    "punishment": "Up to 10 years imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 10,
+    "description": "Taking property using force, threat or violence."
+  },
+
+  "dacoity": {
+    "section": "Section 395 IPC",
+    "punishment": "Life imprisonment or up to 10 years and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Robbery committed by five or more persons."
+  },
+
+  "cheating": {
+    "section": "Section 420 IPC",
+    "punishment": "Up to 7 years imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 7,
+    "description": "Dishonest deception to obtain property or money."
+  },
+
+  "criminal breach of trust": {
+    "section": "Section 406 IPC",
+    "punishment": "Up to 3 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Misusing property entrusted to a person."
+  },
+
+  "forgery": {
+    "section": "Section 465 IPC",
+    "punishment": "Up to 2 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "No",
+    "max_years": 2,
+    "description": "Creating false documents dishonestly."
+  },
+
+  "defamation": {
+    "section": "Section 499 IPC",
+    "punishment": "Up to 2 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "No",
+    "max_years": 2,
+    "description": "Harming a person's reputation through false statements."
+  },
+
+  "rioting": {
+    "section": "Section 147 IPC",
+    "punishment": "Up to 2 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 2,
+    "description": "Use of violence by an unlawful assembly."
+  },
+
+  "unlawful assembly": {
+    "section": "Section 141 IPC",
+    "punishment": "Up to 6 months imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 1,
+    "description": "Assembly of five or more persons with illegal objective."
+  },
+
+  "public nuisance": {
+    "section": "Section 268 IPC",
+    "punishment": "Fine",
+    "bailable": "Yes",
+    "cognizable": "No",
+    "max_years": 0,
+    "description": "Act causing inconvenience, danger or injury to the public."
+  },
+
+  "corruption": {
+    "section": "Prevention of Corruption Act, 1988",
+    "punishment": "Up to 7 years imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 7,
+    "description": "Public servant taking bribe or abusing official position."
+  },
+
+  "hacking": {
+    "section": "Section 66 IT Act",
+    "punishment": "Up to 3 years imprisonment or fine or both",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Unauthorized access or damage to computer systems."
+  },
+
+  "cyber fraud": {
+    "section": "Section 66D IT Act",
+    "punishment": "Up to 3 years imprisonment and fine",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Cheating through online means or digital platforms."
+  },
+
+  "identity theft": {
+    "section": "Section 66C IT Act",
+    "punishment": "Up to 3 years imprisonment and fine",
+    "bailable": "Yes",
+    "cognizable": "Yes",
+    "max_years": 3,
+    "description": "Fraudulent use of another person's digital identity."
+  },
+
+  "drug trafficking": {
+    "section": "Section 21 NDPS Act",
+    "punishment": "10 to 20 years imprisonment and heavy fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Illegal production, sale or transport of narcotic drugs."
+  },
+
+  "acid attack": {
+    "section": "Section 326A IPC",
+    "punishment": "Minimum 10 years to life imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Causing permanent damage or disfigurement by throwing acid."
+  },
+
+  "human trafficking": {
+    "section": "Section 370 IPC",
+    "punishment": "7 years to life imprisonment and fine",
+    "bailable": "No",
+    "cognizable": "Yes",
+    "max_years": 20,
+    "description": "Exploitation of persons through force, fraud or coercion."
+  }
+}

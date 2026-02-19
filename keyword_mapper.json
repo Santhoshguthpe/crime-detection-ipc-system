@@ -1,0 +1,247 @@
+{
+  "murder": [
+    "murder",
+    "killed someone",
+    "killed a person",
+    "shot and killed",
+    "stabbed and killed",
+    "strangled to death",
+    "poisoned someone",
+    "burned someone alive",
+    "intentionally killed",
+    "planned killing",
+    "ended someone's life"
+  ],
+
+  "attempt to murder": [
+    "tried to kill",
+    "attempted to kill",
+    "shot but survived",
+    "stabbed but survived",
+    "serious attack to kill",
+    "attacked with knife to kill",
+    "attacked with gun",
+    "almost killed"
+  ],
+
+  "culpable homicide": [
+    "killed in sudden fight",
+    "death without planning",
+    "killed in anger",
+    "accidental killing in fight",
+    "caused death without intention"
+  ],
+
+  "hurt": [
+    "hurt someone",
+    "hit someone",
+    "slapped someone",
+    "punched someone",
+    "minor injury",
+    "simple injury",
+    "beat someone lightly"
+  ],
+
+  "grievous hurt": [
+    "serious injury",
+    "broke bone",
+    "fracture",
+    "lost eye",
+    "lost tooth",
+    "permanent injury",
+    "severe beating"
+  ],
+
+  "kidnapping": [
+    "kidnapped child",
+    "took child without permission",
+    "took minor away",
+    "child taken forcefully",
+    "illegal custody of child"
+  ],
+
+  "abduction": [
+    "forcefully took person",
+    "dragged someone away",
+    "threatened and took away",
+    "forced someone to go"
+  ],
+
+  "rape": [
+    "rape",
+    "raped girl",
+    "raped woman",
+    "forced sex",
+    "sex without consent",
+    "sexual force",
+    "forced physical relation"
+  ],
+
+  "sexual harassment": [
+    "sexual harassment",
+    "inappropriate touch",
+    "unwanted touching",
+    "bad touch",
+    "asked for sexual favor",
+    "dirty comments",
+    "harassed at workplace"
+  ],
+
+  "stalking": [
+    "stalking",
+    "following someone repeatedly",
+    "constant calling",
+    "constant messaging",
+    "tracking someone",
+    "harassing online"
+  ],
+
+  "dowry death": [
+    "dowry demand",
+    "dowry harassment",
+    "bride burning",
+    "harassed for money after marriage",
+    "death due to dowry"
+  ],
+
+  "domestic violence": [
+    "beat wife",
+    "husband beating wife",
+    "family violence",
+    "home abuse",
+    "physical abuse at home"
+  ],
+
+  "theft": [
+    "stole money",
+    "stole mobile",
+    "stole bike",
+    "stole car",
+    "snatched phone",
+    "pickpocket",
+    "took without permission"
+  ],
+
+  "robbery": [
+    "robbery",
+    "robbed with knife",
+    "robbed with gun",
+    "snatched with force",
+    "threatened and stole",
+    "loot at gunpoint"
+  ],
+
+  "dacoity": [
+    "group robbery",
+    "gang robbery",
+    "five people robbed",
+    "organized robbery"
+  ],
+
+  "cheating": [
+    "cheated me",
+    "money scam",
+    "online scam",
+    "fraud",
+    "fake promise",
+    "took money and ran"
+  ],
+
+  "criminal breach of trust": [
+    "misused money given in trust",
+    "used entrusted money wrongly",
+    "trusted person cheated",
+    "kept money given for safe keeping"
+  ],
+
+  "forgery": [
+    "fake signature",
+    "fake document",
+    "fake certificate",
+    "false agreement",
+    "made fake papers"
+  ],
+
+  "defamation": [
+    "false complaint",
+    "spread false rumor",
+    "damaged reputation",
+    "fake allegation"
+  ],
+
+  "rioting": [
+    "riot",
+    "mob violence",
+    "violent protest",
+    "group fighting"
+  ],
+
+  "unlawful assembly": [
+    "illegal gathering",
+    "group gathered illegally",
+    "five people gathered for violence",
+    "illegal protest"
+  ],
+
+  "public nuisance": [
+    "noise disturbance","public nuisance",
+    "blocked road",
+    "public obstruction",
+    "causing trouble in public"
+  ],
+
+  "corruption": [
+    "took bribe",
+    "gave bribe",
+    "illegal money",
+    "misuse of government power",
+    "government corruption"
+  ],
+
+  "hacking": [
+    "hacked account",
+    "unauthorized access",
+    "cyber attack",
+    "broke into system",
+    "stole online data"
+  ],
+
+  "cyber fraud": [
+    "online fraud",
+    "otp scam",
+    "fake website",
+    "phishing message",
+    "digital payment scam"
+  ],
+
+  "identity theft": [
+    "used my id",
+    "fake profile",
+    "impersonation",
+    "used my name online",
+    "stole identity"
+  ],
+
+  "drug trafficking": [
+    "selling drugs",
+    "drug business",
+    "illegal drugs sale",
+    "smuggling drugs",
+    "supplying narcotics"
+  ],
+
+  "acid attack": [
+    "threw acid",
+    "acid attack on girl",
+    "poured acid",
+    "acid thrown on face"
+  ],
+
+  "human trafficking": [
+    "sold person",
+    "forced labor",
+    "illegal human trade",
+    "forced prostitution",
+    "exploitation by force"
+  ]
+}
