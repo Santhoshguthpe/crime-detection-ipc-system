@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use NyayaAI in academic work, please cite this software."
+title: "NyayaAI: Multilingual Incident Classification and Indian Legal-Awareness Assistant"
+type: software
+authors:
+  - family-names: "Guthpe"
+    given-names: "Santhosh"
+repository-code: "https://github.com/Santhoshguthpe/crime-detection-ipc-system"
+url: "https://santhosh-crime-ai-assistant.onrender.com/"
+version: "4.0.0"
+date-released: "2026-08-25"
+keywords:
+  - legal awareness
+  - multilingual NLP
+  - Bharatiya Nyaya Sanhita
+  - Indian Penal Code
+  - incident classification
+  - responsible AI

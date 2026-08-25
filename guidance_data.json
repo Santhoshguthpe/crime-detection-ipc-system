@@ -1,0 +1,74 @@
+{
+  "groups": {
+    "violent": {
+      "categories": ["murder", "attempt to murder", "culpable homicide", "hurt", "grievous hurt", "kidnapping", "abduction", "rape", "acid attack", "human trafficking"],
+      "next_steps": {
+        "en": ["Move to a safe place and call 112 if anyone is in immediate danger.", "Seek medical care for any injury and ask for copies of medical records.", "Contact the nearest police station or an authorised legal professional promptly."],
+        "hi": ["सुरक्षित स्थान पर जाएँ और किसी को तत्काल खतरा हो तो 112 पर कॉल करें।", "चोट होने पर चिकित्सा सहायता लें और मेडिकल रिकॉर्ड की प्रतियाँ रखें।", "जल्द से जल्द नज़दीकी पुलिस स्टेशन या अधिकृत कानूनी विशेषज्ञ से संपर्क करें।"],
+        "te": ["సురక్షిత ప్రదేశానికి వెళ్లి ఎవరికైనా తక్షణ ప్రమాదం ఉంటే 112కు కాల్ చేయండి.", "గాయం ఉంటే వైద్య సహాయం తీసుకుని వైద్య రికార్డుల ప్రతులను ఉంచుకోండి.", "వెంటనే సమీప పోలీస్ స్టేషన్ లేదా అర్హత కలిగిన న్యాయ నిపుణుడిని సంప్రదించండి."]
+      },
+      "evidence": {
+        "en": ["Date, time and location of the incident", "Photos, videos, CCTV details or witness contacts", "Medical reports, damaged items and relevant messages"],
+        "hi": ["घटना की तारीख, समय और स्थान", "फोटो, वीडियो, CCTV विवरण या गवाहों के संपर्क", "मेडिकल रिपोर्ट, क्षतिग्रस्त वस्तुएँ और संबंधित संदेश"],
+        "te": ["సంఘటన తేదీ, సమయం మరియు ప్రదేశం", "ఫోటోలు, వీడియోలు, CCTV వివరాలు లేదా సాక్షుల సంప్రదింపులు", "వైద్య నివేదికలు, దెబ్బతిన్న వస్తువులు మరియు సంబంధిత సందేశాలు"]
+      }
+    },
+    "women_safety": {
+      "categories": ["sexual harassment", "stalking", "dowry death", "domestic violence"],
+      "next_steps": {
+        "en": ["Do not confront the person alone; move to a trusted and safe place.", "Call 112 if the conduct is continuing or there is immediate danger.", "Contact police, a support organisation or NALSA legal aid for guidance."],
+        "hi": ["व्यक्ति का अकेले सामना न करें; किसी भरोसेमंद और सुरक्षित स्थान पर जाएँ।", "व्यवहार जारी हो या तत्काल खतरा हो तो 112 पर कॉल करें।", "मार्गदर्शन के लिए पुलिस, सहायता संगठन या NALSA कानूनी सहायता से संपर्क करें।"],
+        "te": ["ఆ వ్యక్తిని ఒంటరిగా ఎదుర్కోవద్దు; నమ్మకమైన సురక్షిత ప్రదేశానికి వెళ్లండి.", "ప్రవర్తన కొనసాగుతున్నా లేదా తక్షణ ప్రమాదం ఉన్నా 112కు కాల్ చేయండి.", "మార్గదర్శనం కోసం పోలీసులు, సహాయ సంస్థ లేదా NALSA న్యాయ సహాయాన్ని సంప్రదించండి."]
+      },
+      "evidence": {
+        "en": ["Messages, emails, call logs and social-media records", "A dated record of repeated incidents", "Photos, recordings, witness details or workplace complaints"],
+        "hi": ["संदेश, ईमेल, कॉल लॉग और सोशल-मीडिया रिकॉर्ड", "बार-बार हुई घटनाओं का तारीख सहित रिकॉर्ड", "फोटो, रिकॉर्डिंग, गवाहों का विवरण या कार्यस्थल शिकायतें"],
+        "te": ["సందేశాలు, ఇమెయిల్స్, కాల్ లాగ్స్ మరియు సోషల్ మీడియా రికార్డులు", "పునరావృత సంఘటనల తేదీలతో కూడిన రికార్డు", "ఫోటోలు, రికార్డింగ్స్, సాక్షుల వివరాలు లేదా కార్యాలయ ఫిర్యాదులు"]
+      }
+    },
+    "cyber": {
+      "categories": ["hacking", "cyber fraud", "identity theft"],
+      "next_steps": {
+        "en": ["For financial cyber fraud, call 1930 immediately and contact your bank.", "Change affected passwords from a trusted device and enable two-factor authentication.", "Report the incident at the National Cyber Crime Reporting Portal."],
+        "hi": ["वित्तीय साइबर धोखाधड़ी के लिए तुरंत 1930 पर कॉल करें और अपने बैंक से संपर्क करें।", "सुरक्षित डिवाइस से प्रभावित पासवर्ड बदलें और दो-स्तरीय सुरक्षा चालू करें।", "राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल पर घटना की रिपोर्ट करें।"],
+        "te": ["ఆర్థిక సైబర్ మోసం జరిగితే వెంటనే 1930కు కాల్ చేసి మీ బ్యాంకును సంప్రదించండి.", "నమ్మకమైన పరికరం నుంచి ప్రభావిత పాస్‌వర్డ్‌లను మార్చి రెండు దశల భద్రతను ప్రారంభించండి.", "జాతీయ సైబర్ క్రైమ్ రిపోర్టింగ్ పోర్టల్‌లో సంఘటనను నివేదించండి."]
+      },
+      "evidence": {
+        "en": ["Transaction ID, bank or wallet name, amount, date and time", "Screenshots, URLs, phone numbers, emails and chat history", "Account alerts and complaint acknowledgement numbers"],
+        "hi": ["लेनदेन ID, बैंक या वॉलेट का नाम, राशि, तारीख और समय", "स्क्रीनशॉट, URL, फोन नंबर, ईमेल और चैट इतिहास", "खाता अलर्ट और शिकायत पावती नंबर"],
+        "te": ["లావాదేవీ ID, బ్యాంక్ లేదా వాలెట్ పేరు, మొత్తం, తేదీ మరియు సమయం", "స్క్రీన్‌షాట్లు, URLలు, ఫోన్ నంబర్లు, ఇమెయిల్స్ మరియు చాట్ చరిత్ర", "ఖాతా హెచ్చరికలు మరియు ఫిర్యాదు రసీదు నంబర్లు"]
+      }
+    },
+    "property": {
+      "categories": ["theft", "robbery", "dacoity"],
+      "next_steps": {
+        "en": ["Call 112 if the offender is nearby or anyone remains at risk.", "Do not disturb the scene or personally confront a suspected offender.", "Prepare a clear list of missing property and contact the nearest police station."],
+        "hi": ["अपराधी पास हो या किसी को खतरा बना हो तो 112 पर कॉल करें।", "घटनास्थल को न छेड़ें और संदिग्ध व्यक्ति का स्वयं सामना न करें।", "गुम संपत्ति की स्पष्ट सूची बनाकर नज़दीकी पुलिस स्टेशन से संपर्क करें।"],
+        "te": ["నేరస్థుడు సమీపంలో ఉన్నా లేదా ఎవరికైనా ప్రమాదం కొనసాగుతున్నా 112కు కాల్ చేయండి.", "సంఘటన స్థలాన్ని మార్చవద్దు మరియు అనుమానితుడిని స్వయంగా ఎదుర్కోవద్దు.", "పోయిన ఆస్తి వివరాల జాబితా తయారు చేసి సమీప పోలీస్ స్టేషన్‌ను సంప్రదించండి."]
+      },
+      "evidence": {
+        "en": ["Ownership proof, serial numbers, bills or photographs", "CCTV locations, witness contacts and vehicle details", "Damage photographs and a dated list of missing property"],
+        "hi": ["स्वामित्व प्रमाण, सीरियल नंबर, बिल या फोटो", "CCTV स्थान, गवाह संपर्क और वाहन विवरण", "नुकसान के फोटो और गुम वस्तुओं की तारीख सहित सूची"],
+        "te": ["యాజమాన్య రుజువు, సీరియల్ నంబర్లు, బిల్లులు లేదా ఫోటోలు", "CCTV ప్రదేశాలు, సాక్షుల వివరాలు మరియు వాహన సమాచారం", "నష్టం ఫోటోలు మరియు పోయిన వస్తువుల తేదీతో కూడిన జాబితా"]
+      }
+    },
+    "general": {
+      "categories": [],
+      "next_steps": {
+        "en": ["Write down the facts in date and time order while they are fresh.", "Keep original documents and digital records unchanged.", "Contact police or a qualified legal professional if you need to take action."],
+        "hi": ["तथ्यों को तारीख और समय के क्रम में तुरंत लिख लें।", "मूल दस्तावेज़ और डिजिटल रिकॉर्ड बिना बदलाव के सुरक्षित रखें।", "कार्रवाई की आवश्यकता हो तो पुलिस या योग्य कानूनी विशेषज्ञ से संपर्क करें।"],
+        "te": ["వివరాలు గుర్తుండగానే తేదీ మరియు సమయ క్రమంలో రాసుకోండి.", "అసలు పత్రాలు మరియు డిజిటల్ రికార్డులను మార్చకుండా ఉంచండి.", "చర్య తీసుకోవాల్సి ఉంటే పోలీసులు లేదా అర్హత కలిగిన న్యాయ నిపుణుడిని సంప్రదించండి."]
+      },
+      "evidence": {
+        "en": ["Original documents, receipts and communication records", "A clear timeline of events", "Names of organisations involved and witness contacts"],
+        "hi": ["मूल दस्तावेज़, रसीदें और संचार रिकॉर्ड", "घटनाओं की स्पष्ट समयरेखा", "संबंधित संस्थाओं के नाम और गवाह संपर्क"],
+        "te": ["అసలు పత్రాలు, రసీదులు మరియు కమ్యూనికేషన్ రికార్డులు", "సంఘటనల స్పష్టమైన కాలక్రమం", "సంబంధిత సంస్థల పేర్లు మరియు సాక్షుల సంప్రదింపులు"]
+      }
+    }
+  },
+  "resources": {
+    "emergency": {"label": {"en": "Emergency assistance — 112", "hi": "आपातकालीन सहायता — 112", "te": "అత్యవసర సహాయం — 112"}, "url": "https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss"},
+    "cyber": {"label": {"en": "Report cybercrime — 1930", "hi": "साइबर अपराध रिपोर्ट करें — 1930", "te": "సైబర్ నేరాన్ని నివేదించండి — 1930"}, "url": "https://cybercrime.gov.in/"},
+    "legal_aid": {"label": {"en": "NALSA free legal aid — 15100", "hi": "NALSA निःशुल्क कानूनी सहायता — 15100", "te": "NALSA ఉచిత న్యాయ సహాయం — 15100"}, "url": "https://nalsa.gov.in/"}
+  }
+}

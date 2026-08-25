@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "law": "Bharatiya Nyaya Sanhita, 2023",
+    "effective_from": "2024-07-01",
+    "source_title": "Ministry of Home Affairs — Bharatiya Nyaya Sanhita, 2023",
+    "source_url": "https://www.mha.gov.in/sites/default/files/250883_english_01042024.pdf",
+    "notice": "BNS applies subject to the date of the alleged offence and the savings clause. Older incidents may continue under IPC."
+  },
+  "updates": {
+    "murder": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 103 BNS",
+      "legacy_section": "Section 302 IPC",
+      "punishment": "Death or imprisonment for life, and fine",
+      "consequences": [
+        "Trial is ordinarily before a Court of Session.",
+        "A fine may be imposed in addition to imprisonment.",
+        "Group murder on specified identity grounds is separately covered by Section 103(2)."
+      ]
+    },
+    "attempt to murder": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 109 BNS",
+      "legacy_section": "Section 307 IPC",
+      "punishment": "Up to 10 years and fine; if hurt is caused, imprisonment for life may apply",
+      "consequences": [
+        "The result depends heavily on intention, knowledge and the surrounding circumstances.",
+        "Causing hurt can increase exposure up to imprisonment for life.",
+        "Weapon use and medical evidence may materially affect the charge."
+      ]
+    },
+    "culpable homicide": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 105 BNS",
+      "legacy_section": "Section 304 IPC",
+      "punishment": "Life imprisonment or 5–10 years and fine where intention is proved; up to 10 years and fine where there is knowledge without intention",
+      "consequences": [
+        "The applicable range changes depending on intention versus knowledge.",
+        "A fine may be imposed with imprisonment.",
+        "Medical and forensic evidence is central to distinguishing this offence from murder."
+      ]
+    },
+    "hurt": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 115(2) BNS",
+      "legacy_section": "Section 323 IPC",
+      "punishment": "Up to 1 year, or fine up to ₹10,000, or both",
+      "consequences": [
+        "The injury report may determine whether the allegation is simple or grievous hurt.",
+        "A fine can be imposed instead of or together with imprisonment.",
+        "Special circumstances or use of dangerous means can attract other sections."
+      ]
+    },
+    "grievous hurt": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 117(2) BNS",
+      "legacy_section": "Section 325 IPC",
+      "punishment": "Up to 7 years and fine; aggravated forms may attract higher punishment",
+      "consequences": [
+        "Fracture, dislocation, permanent impairment and specified serious injuries may qualify.",
+        "Dangerous weapons or means can attract Section 118 and higher punishment.",
+        "Medical evidence determines the nature and severity of injury."
+      ]
+    },
+    "kidnapping": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 137(2) BNS",
+      "legacy_section": "Section 363 IPC",
+      "punishment": "Up to 7 years and fine",
+      "consequences": [
+        "Kidnapping from India and from lawful guardianship are covered.",
+        "Ransom, murder, begging or exploitation purposes can attract much higher punishment.",
+        "Age, consent and lawful guardianship are important facts."
+      ]
+    },
+    "abduction": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 138 BNS (definition)",
+      "legacy_section": "Section 362 IPC (definition)",
+      "punishment": "No single general punishment; the purpose and connected offence determine the penalty",
+      "consequences": [
+        "Force or deceitful inducement is part of the definition.",
+        "Abduction for murder, ransom, grievous hurt or exploitation attracts separate provisions.",
+        "The purpose of taking the person is essential to the final charge."
+      ]
+    },
+    "rape": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 64 BNS",
+      "legacy_section": "Section 376 IPC",
+      "punishment": "Rigorous imprisonment of at least 10 years, extendable to life, and fine; aggravated cases may carry higher punishment",
+      "consequences": [
+        "The court may direct that the fine support the victim's medical and rehabilitation needs where provided by law.",
+        "Aggravated circumstances and the victim's age can materially increase punishment.",
+        "Consent, age and medical or digital evidence require careful legal assessment."
+      ]
+    },
+    "sexual harassment": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 75 BNS",
+      "legacy_section": "Section 354A IPC",
+      "punishment": "Up to 3 years, or fine, or both for specified physical advances, demands or pornography; up to 1 year, or fine, or both for sexually coloured remarks",
+      "consequences": [
+        "The punishment differs according to the exact act alleged.",
+        "Workplace incidents may also trigger proceedings under the POSH Act and employer policy.",
+        "Messages, recordings and witness accounts may become important evidence."
+      ]
+    },
+    "stalking": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 78 BNS",
+      "legacy_section": "Section 354D IPC",
+      "punishment": "Up to 3 years and fine for a first conviction; up to 5 years and fine for a subsequent conviction",
+      "consequences": [
+        "Repeated unwanted contact and monitoring of electronic communication are covered.",
+        "A subsequent conviction carries a higher maximum sentence.",
+        "Call records, messages and platform evidence may be relevant."
+      ]
+    },
+    "dowry death": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 80 BNS",
+      "legacy_section": "Section 304B IPC",
+      "punishment": "At least 7 years, extendable to imprisonment for life",
+      "consequences": [
+        "The provision addresses specified unnatural deaths within seven years of marriage.",
+        "Evidence of dowry-related cruelty or harassment soon before death is important.",
+        "Related cruelty and Dowry Prohibition Act offences may also be investigated."
+      ]
+    },
+    "theft": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 303(2) BNS",
+      "legacy_section": "Section 379 IPC",
+      "punishment": "Up to 3 years, or fine, or both; repeat conviction can lead to 1–5 years rigorous imprisonment and fine",
+      "consequences": [
+        "For a first conviction involving property below ₹5,000, restoration can result in community service under the statutory proviso.",
+        "Repeat convictions carry a higher minimum and maximum term.",
+        "Theft from a dwelling, transport, place of worship or government property can attract Section 305 and up to 7 years plus fine."
+      ]
+    },
+    "robbery": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 309(4) BNS",
+      "legacy_section": "Section 392 IPC",
+      "punishment": "Rigorous imprisonment up to 10 years and fine; highway robbery between sunset and sunrise may extend to 14 years",
+      "consequences": [
+        "Attempted robbery can attract up to 7 years and fine.",
+        "Causing hurt during robbery can expose participants to life imprisonment or up to 10 years rigorous imprisonment and fine.",
+        "Use of a deadly weapon can attract additional or enhanced provisions."
+      ]
+    },
+    "dacoity": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 310 BNS",
+      "legacy_section": "Section 395 IPC",
+      "punishment": "Imprisonment for life, or rigorous imprisonment up to 10 years, and fine",
+      "consequences": [
+        "Dacoity involves five or more persons committing, attempting or aiding robbery.",
+        "Murder during dacoity can expose every participant to death, life imprisonment or at least 10 years rigorous imprisonment and fine.",
+        "Preparation, assembly and membership of a habitual dacoity gang are separately punishable."
+      ]
+    },
+    "cheating": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 318 BNS",
+      "legacy_section": "Section 420 IPC",
+      "punishment": "Up to 3 years, or fine, or both; cheating that dishonestly induces delivery of property may extend to 7 years and fine",
+      "consequences": [
+        "A broken promise alone is not automatically cheating; dishonest intention at the relevant time matters.",
+        "Property-delivery and valuable-security cases carry a higher maximum sentence.",
+        "Banking records, communications and transaction trails may be examined."
+      ]
+    },
+    "criminal breach of trust": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 316 BNS",
+      "legacy_section": "Section 406 IPC",
+      "punishment": "Up to 5 years, or fine, or both; specified occupations and public servants can face higher punishment",
+      "consequences": [
+        "Entrustment and dishonest misuse are central elements.",
+        "Carriers, warehouse-keepers, clerks and servants can face up to 7 years and fine.",
+        "Public servants, bankers, merchants, brokers, attorneys or agents can face life imprisonment or up to 10 years and fine."
+      ]
+    },
+    "forgery": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 336 BNS",
+      "legacy_section": "Section 465 IPC",
+      "punishment": "Up to 2 years, or fine, or both; forgery intended for cheating may extend to 7 years and fine",
+      "consequences": [
+        "False electronic records are expressly covered.",
+        "Forgery for cheating carries a higher maximum sentence.",
+        "Use of forged court, public, identity or valuable-security documents may attract separate aggravated provisions."
+      ]
+    },
+    "defamation": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 356 BNS",
+      "legacy_section": "Section 499/500 IPC",
+      "punishment": "Simple imprisonment up to 2 years, or fine, or both, or community service",
+      "consequences": [
+        "BNS retains statutory exceptions, including specified good-faith statements.",
+        "Community service is an available sentencing option.",
+        "Printing, engraving or selling defamatory matter can be separately punishable."
+      ]
+    },
+    "rioting": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 191 BNS",
+      "legacy_section": "Section 147/148 IPC",
+      "punishment": "Up to 2 years, or fine, or both; armed rioting may extend to 5 years, or fine, or both",
+      "consequences": [
+        "Every member using force or violence for the common object can be liable for rioting.",
+        "Being armed with a deadly weapon increases the maximum sentence.",
+        "Members may also be liable for offences committed in prosecution of the common object under Section 190."
+      ]
+    },
+    "unlawful assembly": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 189 BNS",
+      "legacy_section": "Section 141 IPC",
+      "punishment": "Membership may attract up to 6 months, or fine, or both; continuing after a lawful dispersal command may attract up to 2 years, or fine, or both",
+      "consequences": [
+        "An assembly generally requires five or more persons and a prohibited common object.",
+        "Knowing continuation after a lawful order to disperse increases exposure.",
+        "Armed participation and offences committed for the common object may attract additional liability."
+      ]
+    },
+    "public nuisance": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 270 BNS (definition)",
+      "legacy_section": "Section 268 IPC (definition)",
+      "punishment": "The applicable punishment depends on the specific nuisance provision, continuing conduct and any local law involved",
+      "consequences": [
+        "A public nuisance must affect the public or people in the vicinity, not merely one private dispute.",
+        "Continuing a nuisance after a lawful direction can lead to additional consequences.",
+        "Municipal, traffic, environmental or noise-control laws may also apply."
+      ]
+    },
+    "acid attack": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 124 BNS",
+      "legacy_section": "Section 326A/326B IPC",
+      "punishment": "For causing specified acid injuries: 10 years to life and fine; attempt: 5–7 years and fine",
+      "consequences": [
+        "The fine must be just and reasonable to meet the victim's medical expenses and is payable to the victim.",
+        "Attempting to throw or administer acid is separately punishable even when the intended injury is not completed.",
+        "Medical evidence and proof of intention or knowledge are central."
+      ]
+    },
+    "human trafficking": {
+      "law": "Bharatiya Nyaya Sanhita, 2023",
+      "section": "Section 143 BNS",
+      "legacy_section": "Section 370 IPC",
+      "punishment": "Generally 7–10 years rigorous imprisonment and fine; multiple victims, children, repeat offences or public-servant involvement can lead to 10 years to life",
+      "consequences": [
+        "The victim's consent is immaterial to determining trafficking under the section.",
+        "Trafficking of children or multiple persons carries enhanced minimum punishment.",
+        "Repeat child trafficking or involvement of a public servant or police officer can result in imprisonment for the remainder of natural life and fine."
+      ]
+    }
+  }
+}
