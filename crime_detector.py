@@ -4,6 +4,8 @@ import json
 import math
 import os
 import re
+import unicodedata
+from collections import Counter
 from dataclasses import asdict, dataclass
 from typing import Any
 
@@ -14,6 +16,13 @@ from sklearn.pipeline import FeatureUnion, Pipeline
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SUPPORTED_LANGUAGES = {"en", "hi", "te"}
+EXPLANATION_STOPWORDS = {
+    "a", "an", "and", "are", "at", "by", "for", "from", "he", "her", "him",
+    "his", "i", "in", "is", "it", "me", "my", "of", "on", "or", "she", "someone",
+    "that", "the", "their", "they", "this", "to", "was", "were", "with", "एक", "और",
+    "का", "की", "को", "से", "ने", "मेरा", "मेरी", "था", "है", "एकరు", "నా", "ఒక",
+    "కు", "తో", "లో", "నన్ను", "అతను", "వారు",
+}
 
 
 @dataclass(frozen=True)
@@ -32,6 +41,19 @@ def _normalize(text: str) -> str:
     return text
 
 
+def _tokens(text: str) -> list[str]:
+    tokens = []
+    for raw_token in text.split():
+        token = "".join(
+            character
+            for character in raw_token
+            if unicodedata.category(character)[0] in {"L", "M", "N"}
+        )
+        if len(token) >= 2 and token not in EXPLANATION_STOPWORDS:
+            tokens.append(token)
+    return tokens
+
+
 class CrimeClassifier:
     """Small supervised multilingual classifier trained from project examples."""
 
@@ -45,7 +67,8 @@ class CrimeClassifier:
             BASE_DIR, "multilingual_examples.json"
         )
         self.labels: dict[str, dict[str, str]] = {}
-        self._exact_examples: dict[str, str] = {}
+        self._category_terms: dict[str, Counter[str]] = {}
+        self._term_categories: dict[str, set[str]] = {}
         texts, targets = self._load_training_data()
 
         self.model = Pipeline(
@@ -76,6 +99,7 @@ class CrimeClassifier:
                 (
                     "classifier",
                     LogisticRegression(
+                        C=6.0,
                         max_iter=2500,
                         class_weight="balanced",
                         random_state=42,
@@ -116,7 +140,11 @@ class CrimeClassifier:
             return
         texts.append(normalized)
         targets.append(crime)
-        self._exact_examples[normalized] = crime
+        terms = self._category_terms.setdefault(crime, Counter())
+        example_terms = _tokens(normalized)
+        terms.update(example_terms)
+        for token in example_terms:
+            self._term_categories.setdefault(token, set()).add(crime)
 
     def localized_label(self, crime: str, language: str = "en") -> str:
         language = language if language in SUPPORTED_LANGUAGES else "en"
@@ -128,16 +156,6 @@ class CrimeClassifier:
         normalized = _normalize(text)
         if not normalized:
             return []
-
-        exact_crime = self._exact_examples.get(normalized)
-        if exact_crime:
-            return [
-                Prediction(
-                    crime=exact_crime,
-                    confidence=1.0,
-                    label=self.localized_label(exact_crime, language),
-                )
-            ]
 
         probabilities = self.model.predict_proba([normalized])[0]
         classes = self.model.classes_
@@ -155,6 +173,25 @@ class CrimeClassifier:
             for crime in [str(raw_crime)]
             if math.isfinite(float(probability))
         ]
+
+    def matched_signals(self, text: str, crime: str, limit: int = 6) -> list[str]:
+        """Return human-readable words shared with examples for the predicted category."""
+        normalized = _normalize(text)
+        terms = self._category_terms.get(crime, Counter())
+        input_terms = list(dict.fromkeys(_tokens(normalized)))
+        matches = [
+            token
+            for token in input_terms
+            if token in terms and len(self._term_categories.get(token, set())) <= 3
+        ]
+        matches.sort(
+            key=lambda token: (
+                len(self._term_categories.get(token, set())),
+                -terms[token],
+                input_terms.index(token),
+            )
+        )
+        return matches[:limit]
 
 
 classifier = CrimeClassifier()

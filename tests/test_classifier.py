@@ -5,7 +5,16 @@ def test_exact_english_example():
     classifier = CrimeClassifier()
     prediction = classifier.predict("robbed with knife", language="en", top_k=1)[0]
     assert prediction.crime == "robbery"
-    assert prediction.confidence == 1.0
+    assert 0 < prediction.confidence < 1
+
+
+def test_explanation_signals_are_human_readable():
+    classifier = CrimeClassifier()
+    signals = classifier.matched_signals(
+        "Threatened me with a weapon and took my phone", "robbery"
+    )
+    assert "weapon" in signals
+    assert "threatened" in signals
 
 
 def test_hindi_example():

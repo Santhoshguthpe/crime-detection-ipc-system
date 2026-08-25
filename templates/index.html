@@ -3,24 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="NyayaAI: multilingual voice-assisted crime category and Indian legal reference explorer.">
-  <title>NyayaAI · Crime & Law Assistant</title>
-  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}?v=3.0.1">
+  <meta name="description" content="NyayaAI is a privacy-first multilingual incident classification and Indian legal-awareness assistant.">
+  <meta name="theme-color" content="#071226">
+  <title>NyayaAI · Incident & Legal Awareness Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}?v=4.0.0">
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#analyzer">Skip to analyzer</a>
+
+  <div class="safety-strip">
+    <span data-i18n="dangerText">Someone in immediate danger?</span>
+    <a href="tel:112"><span data-i18n="callEmergency">Call emergency services</span> <strong>112</strong></a>
+  </div>
+
+  <header class="site-header page-width">
     <a class="brand" href="/" aria-label="NyayaAI home">
       <span class="brand-mark" aria-hidden="true">न्या</span>
       <span>Nyaya<span>AI</span></span>
     </a>
+    <nav aria-label="Main navigation">
+      <a href="#analyzer" data-i18n="navAnalyze">Analyze</a>
+      <a href="#how-it-works" data-i18n="navHow">How it works</a>
+      <a href="#responsible-ai" data-i18n="navSafety">Safety</a>
+    </nav>
     <div class="header-actions">
-      <span class="law-badge"><span aria-hidden="true">●</span> <span data-i18n="lawBadge">BNS updated · 1 Jul 2024</span></span>
+      <span class="law-badge"><i aria-hidden="true"></i><span data-i18n="lawBadge">Current BNS reference layer</span></span>
       <label class="language-picker">
         <span class="sr-only" data-i18n="language">Language</span>
         <select id="language" name="language" form="analysis-form" aria-label="Language">
-          <option value="en">English</option>
-          <option value="hi">हिन्दी</option>
-          <option value="te">తెలుగు</option>
+          <option value="en">EN · English</option>
+          <option value="hi">HI · हिन्दी</option>
+          <option value="te">TE · తెలుగు</option>
         </select>
       </label>
     </div>
@@ -29,141 +42,165 @@
   <main>
     <section class="hero page-width">
       <div class="hero-copy">
-        <span class="eyebrow" data-i18n="eyebrow">Voice-first · Multilingual · Legal awareness</span>
-        <h1 data-i18n="title">Understand the possible law behind an incident.</h1>
-        <p data-i18n="subtitle">Describe what happened in English, Hindi, or Telugu. NyayaAI predicts a crime category and shows a current legal reference in seconds.</p>
-        <div class="hero-points" aria-label="Features">
-          <span><i aria-hidden="true">✓</i> <span data-i18n="featureVoice">Voice input</span></span>
-          <span><i aria-hidden="true">✓</i> <span data-i18n="featureLanguages">3 languages</span></span>
-          <span><i aria-hidden="true">✓</i> <span data-i18n="featureBns">BNS references</span></span>
+        <span class="eyebrow" data-i18n="eyebrow">Responsible AI for legal awareness</span>
+        <h1 data-i18n="title">Describe an incident. Understand the possible legal direction.</h1>
+        <p data-i18n="subtitle">Speak or type in English, Hindi, or Telugu. Get a clear preliminary category, date-aware legal reference, and practical next steps.</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#analyzer"><span data-i18n="startAnalysis">Start private analysis</span><span aria-hidden="true">→</span></a>
+          <span class="no-store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 5v5.5c0 5 3.2 9.6 7.5 11.5 4.3-1.9 7.5-6.5 7.5-11.5V5L12 2Zm3.7 7.4-4.3 4.4-2.2-2.2 1.2-1.2 1 1 3.1-3.2 1.2 1.2Z"/></svg><span data-i18n="notStored">Incident text is not stored</span></span>
         </div>
-        <a class="hero-cta" href="#analyzer" data-i18n="startAnalysis">Start analysis</a>
+        <div class="hero-proof">
+          <div><strong>3</strong><span data-i18n="proofLanguages">Supported languages</span></div>
+          <div><strong>23+</strong><span data-i18n="proofBns">BNS-mapped categories</span></div>
+          <div><strong>9/9</strong><span data-i18n="proofTests">Automated checks passing</span></div>
+        </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="visual-glow"></div>
-        <img src="{{ url_for('static', path='/images/legal-ai-hero.webp') }}?v=3.0.1" alt="" width="600" height="400">
+        <div class="visual-orbit"></div>
+        <img src="{{ url_for('static', path='/images/legal-ai-hero.webp') }}?v=4.0.0" alt="" width="600" height="400">
+        <div class="floating-card card-one"><span>✓</span><div><small>LEGAL LAYER</small><strong>BNS + IPC context</strong></div></div>
+        <div class="floating-card card-two"><span>AI</span><div><small>CLASSIFICATION</small><strong>Explainable result</strong></div></div>
       </div>
     </section>
 
     <section id="analyzer" class="analyzer-section page-width">
       <div class="section-heading">
-        <span class="eyebrow" data-i18n="analyzerEyebrow">AI incident analyzer</span>
-        <h2 data-i18n="analyzerTitle">Tell us what happened</h2>
-        <p data-i18n="analyzerIntro">Include actions, threats, property involved, injury, online activity, and other useful facts. Do not enter names or private identifiers.</p>
+        <span class="section-number">01</span>
+        <div><span class="eyebrow" data-i18n="analyzerEyebrow">Private incident assessment</span><h2 data-i18n="analyzerTitle">Start with the facts</h2><p data-i18n="analyzerIntro">Describe actions and circumstances without entering names, phone numbers, account numbers, or other private identifiers.</p></div>
       </div>
 
-      <section class="card input-card">
-        <form id="analysis-form" action="/analyze" method="post">
-          <div class="label-row">
-            <label for="description" data-i18n="descriptionLabel">Incident description</label>
-            <span class="privacy-note" data-i18n="privacy">Avoid personal information</span>
-          </div>
-          <div class="input-wrap">
-            <textarea id="description" name="description" minlength="3" maxlength="2000" required
-              data-i18n-placeholder="placeholder" placeholder="Example: A person threatened me with a knife and took my phone.">{{ submitted_description or '' }}</textarea>
-            <button id="voice-button" class="voice-button" type="button" aria-label="Start voice input" title="Start voice input">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm-1 4.93V22h2v-3.07A8 8 0 0 0 20 11h-2a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93Z"/></svg>
-              <span id="voice-label" data-i18n="speak">Speak</span>
-            </button>
-          </div>
+      <div class="analyzer-layout">
+        <section class="panel input-panel">
+          <form id="analysis-form" action="/analyze" method="post">
+            <div class="form-meta-grid">
+              <label class="field-label" for="incident-date"><span data-i18n="incidentDate">Incident date</span><small data-i18n="dateHelp">Used only to show BNS or legacy IPC context</small></label>
+              <input id="incident-date" name="incident_date" type="date" value="{{ submitted_incident_date or '' }}">
+            </div>
 
-          <div class="example-row">
-            <span data-i18n="tryExample">Try an example:</span>
-            <button class="example-chip" type="button" data-example="robbery" data-i18n="exampleRobbery">Robbery</button>
-            <button class="example-chip" type="button" data-example="cyber" data-i18n="exampleCyber">Cyber fraud</button>
-            <button class="example-chip" type="button" data-example="stalking" data-i18n="exampleStalking">Stalking</button>
-          </div>
+            <label class="danger-check">
+              <input id="immediate-danger" name="immediate_danger" type="checkbox" {% if submitted_immediate_danger %}checked{% endif %}>
+              <span><strong data-i18n="dangerCheck">The situation may involve immediate danger</strong><small data-i18n="dangerHelp">The result will prioritise emergency guidance.</small></span>
+            </label>
 
-          <div class="form-footer">
+            <div class="label-row">
+              <label for="description" data-i18n="descriptionLabel">What happened?</label>
+              <span><span id="character-count">0</span>/2000</span>
+            </div>
+            <div class="input-wrap">
+              <textarea id="description" name="description" minlength="3" maxlength="2000" required data-i18n-placeholder="placeholder" placeholder="Example: A person threatened me with a knife and forcefully took my wallet.">{{ submitted_description or '' }}</textarea>
+              <button id="voice-button" class="voice-button" type="button" aria-label="Start voice input" title="Start voice input">
+                <span class="mic-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm-1 4.93V22h2v-3.07A8 8 0 0 0 20 11h-2a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93Z"/></svg></span>
+                <span><strong id="voice-label" data-i18n="speak">Speak description</strong><small data-i18n="voiceHint">Tap once and speak naturally</small></span>
+              </button>
+            </div>
             <p id="voice-status" class="status" aria-live="polite"></p>
-            <button id="analyze-button" class="primary-button" type="submit">
-              <span data-i18n="analyze">Analyze incident</span><span aria-hidden="true">→</span>
-            </button>
+
+            <div class="example-row">
+              <span data-i18n="tryExample">Try a safe example</span>
+              <button class="example-chip" type="button" data-example="robbery" data-i18n="exampleRobbery">Robbery</button>
+              <button class="example-chip" type="button" data-example="cyber" data-i18n="exampleCyber">Cyber fraud</button>
+              <button class="example-chip" type="button" data-example="stalking" data-i18n="exampleStalking">Stalking</button>
+            </div>
+
+            <button id="analyze-button" class="primary-button" type="submit"><span data-i18n="analyze">Analyze incident</span><span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+
+        <aside class="trust-panel">
+          <span class="trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5.1 3.4 9.5 8 11 4.6-1.5 8-5.9 8-11V5l-8-3Zm0 5a2 2 0 0 1 2 2v1h1v5H9v-5h1V9a2 2 0 0 1 2-2Zm0 1.4c-.4 0-.7.3-.7.7v.9h1.4v-.9c0-.4-.3-.7-.7-.7Z"/></svg></span>
+          <span class="eyebrow" data-i18n="privacyEyebrow">Privacy by design</span>
+          <h3 data-i18n="privacyTitle">Your description stays temporary</h3>
+          <p data-i18n="privacyText">This version has no account, incident database, or history page. The server processes the description in memory for the current response.</p>
+          <ul>
+            <li data-i18n="trustOne">No sign-up required</li>
+            <li data-i18n="trustTwo">No incident history stored</li>
+            <li data-i18n="trustThree">Official sources linked</li>
+            <li data-i18n="trustFour">AI cannot create punishment text</li>
+          </ul>
+          <p class="statute-language" data-i18n="statuteLanguage">Legal section and punishment text remains in English to avoid changing the meaning through automatic translation.</p>
+        </aside>
+      </div>
+
+      <section id="loading" class="panel loading" hidden aria-live="polite"><span class="spinner" aria-hidden="true"></span><div><strong data-i18n="analyzing">Reviewing the description…</strong><small data-i18n="analyzingHelp">Classifying the incident and checking structured legal references.</small></div></section>
+      <section id="error-card" class="panel error-card" hidden role="alert"><span>!</span><div><h2 data-i18n="needDetails">More details needed</h2><p id="error-message"></p></div></section>
+
+      <section id="result-card" class="result-shell" hidden aria-live="polite">
+        <div id="danger-result" class="result-danger" hidden><strong data-i18n="urgentTitle">Safety comes first.</strong><span data-i18n="urgentText">If danger is immediate, stop using this tool and call 112.</span><a href="tel:112">Call 112</a></div>
+
+        <header class="result-header panel">
+          <div class="result-kicker"><span data-i18n="assessmentResult">Preliminary assessment</span><span id="analysis-id"></span></div>
+          <div class="result-title-row">
+            <div><h2 id="crime-name"></h2><p id="match-explanation"></p></div>
+            <span id="match-strength" class="match-strength"></span>
           </div>
-        </form>
-      </section>
-
-      <section id="loading" class="card loading" hidden aria-live="polite">
-        <span class="spinner" aria-hidden="true"></span>
-        <span data-i18n="analyzing">Analyzing the description…</span>
-      </section>
-
-      <section id="error-card" class="card error-card" hidden role="alert">
-        <h2 data-i18n="needDetails">More details needed</h2>
-        <p id="error-message"></p>
-      </section>
-
-      <section id="result-card" class="card result-card" hidden aria-live="polite">
-        <div class="result-heading">
-          <div>
-            <span class="eyebrow" data-i18n="prediction">Possible category</span>
-            <h2 id="crime-name"></h2>
+          <div id="signals-wrap" class="signals-wrap"><span data-i18n="signalsLabel">Wording that supported this match:</span><div id="signals-list"></div></div>
+          <div class="result-actions">
+            <button id="copy-result" type="button"><span aria-hidden="true">⧉</span><span data-i18n="copySummary">Copy summary</span></button>
+            <button id="print-result" type="button"><span aria-hidden="true">⇩</span><span data-i18n="saveReport">Print / save PDF</span></button>
+            <button id="new-analysis" type="button"><span aria-hidden="true">↻</span><span data-i18n="newAnalysis">New analysis</span></button>
           </div>
-          <span id="confidence" class="confidence"></span>
+        </header>
+
+        <div class="result-columns">
+          <div class="result-main">
+            <section class="panel law-card">
+              <div class="panel-heading"><span class="panel-icon">§</span><div><span class="eyebrow" data-i18n="legalDirection">Possible legal direction</span><h3 data-i18n="lawReference">Structured law reference</h3></div><span id="regime-badge" class="regime-badge"></span></div>
+              <div class="law-primary"><span data-i18n="sectionLabel">Reference section</span><strong id="section"></strong><small id="law-name"></small></div>
+              <div id="legacy-row" class="law-secondary"><span data-i18n="legacyLaw">Legacy IPC reference</span><strong id="legacy-section"></strong></div>
+              <div id="current-equivalent-row" class="law-secondary" hidden><span data-i18n="currentEquivalent">Current BNS equivalent</span><strong id="current-equivalent"></strong></div>
+              <dl class="law-grid">
+                <div class="wide"><dt data-i18n="punishment">Possible statutory punishment</dt><dd id="punishment"></dd></div>
+                <div><dt data-i18n="bailable">Bailable status</dt><dd id="bailable"></dd></div>
+                <div><dt data-i18n="cognizable">Cognizable status</dt><dd id="cognizable"></dd></div>
+              </dl>
+              <div class="meaning-box"><h4 data-i18n="meaning">What this category means</h4><p id="reference-description"></p></div>
+              <div class="consequences-box"><h4 data-i18n="consequences">Possible consequences and considerations</h4><ul id="consequences-list"></ul></div>
+              <div class="source-row"><p id="law-notice"></p><a id="source-link" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="officialSource">Open official law source</span> ↗</a></div>
+            </section>
+
+            <section class="panel guidance-card">
+              <div class="panel-heading"><span class="panel-icon teal">✓</span><div><span class="eyebrow" data-i18n="actionEyebrow">Practical guidance</span><h3 data-i18n="nextSteps">Recommended next steps</h3></div></div>
+              <ol id="next-steps-list" class="numbered-list"></ol>
+              <h4 data-i18n="evidenceTitle">Information worth preserving</h4>
+              <ul id="evidence-list" class="check-list"></ul>
+              <div id="resources-list" class="resource-list"></div>
+            </section>
+          </div>
+
+          <aside class="result-side">
+            <section class="panel alternatives-card">
+              <span class="eyebrow" data-i18n="alternativesEyebrow">Model transparency</span>
+              <h3 data-i18n="alternativesTitle">Other categories considered</h3>
+              <p data-i18n="alternativesText">These are possibilities, not additional charges.</p>
+              <div id="alternatives-list"></div>
+            </section>
+            <section class="panel boundary-card">
+              <h3 data-i18n="boundaryTitle">What this result cannot decide</h3>
+              <ul><li data-i18n="boundaryOne">Whether an offence legally occurred</li><li data-i18n="boundaryTwo">Which exact subsection applies</li><li data-i18n="boundaryThree">Guilt, bail, or the final sentence</li><li data-i18n="boundaryFour">Whether evidence is legally admissible</li></ul>
+            </section>
+          </aside>
         </div>
-
-        <div class="law-highlight">
-          <div>
-            <span class="law-label" data-i18n="currentLaw">Current legal reference</span>
-            <strong id="section"></strong>
-            <span id="law-name"></span>
-          </div>
-          <div id="legacy-row" class="legacy-law">
-            <span data-i18n="legacyLaw">Legacy IPC reference</span>
-            <strong id="legacy-section"></strong>
-          </div>
-        </div>
-
-        <dl class="result-grid">
-          <div class="wide-result"><dt data-i18n="punishment">Possible statutory punishment</dt><dd id="punishment"></dd></div>
-          <div><dt data-i18n="bailable">Indicative bailable status</dt><dd id="bailable"></dd></div>
-          <div><dt data-i18n="cognizable">Indicative cognizable status</dt><dd id="cognizable"></dd></div>
-        </dl>
-
-        <div class="result-details">
-          <div class="description-box">
-            <h3 data-i18n="meaning">What this category means</h3>
-            <p id="reference-description"></p>
-          </div>
-          <div class="consequences-box">
-            <h3 data-i18n="consequences">Possible consequences & considerations</h3>
-            <ul id="consequences-list"></ul>
-          </div>
-        </div>
-
-        <div class="source-row">
-          <p id="law-notice"></p>
-          <a id="source-link" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="officialSource">View official source</span> ↗</a>
-        </div>
-        <p id="classification-note" class="classification-note"></p>
-        <p id="disclaimer" class="disclaimer"></p>
+        <div class="result-disclaimer"><strong data-i18n="important">Important</strong><p id="classification-note"></p><p id="disclaimer"></p><p id="privacy-result"></p></div>
       </section>
     </section>
 
-    <section class="how-section page-width">
-      <div class="section-heading compact">
-        <span class="eyebrow" data-i18n="howEyebrow">Simple and transparent</span>
-        <h2 data-i18n="howTitle">How it works</h2>
-      </div>
-      <div class="steps-grid">
-        <article><span>01</span><h3 data-i18n="stepOneTitle">Describe the incident</h3><p data-i18n="stepOneText">Type or use the microphone in your preferred language.</p></article>
-        <article><span>02</span><h3 data-i18n="stepTwoTitle">AI predicts a category</h3><p data-i18n="stepTwoText">A multilingual classifier compares the description with learned examples.</p></article>
-        <article><span>03</span><h3 data-i18n="stepThreeTitle">Review verified references</h3><p data-i18n="stepThreeText">Structured law data shows possible sections and consequences—not a final legal decision.</p></article>
-      </div>
+    <section id="how-it-works" class="process-section page-width">
+      <div class="section-heading centered"><span class="eyebrow" data-i18n="howEyebrow">Clear by design</span><h2 data-i18n="howTitle">How NyayaAI reaches a result</h2></div>
+      <div class="process-grid"><article><span>01</span><div><h3 data-i18n="stepOneTitle">You provide the facts</h3><p data-i18n="stepOneText">Voice is converted to text in the browser, or you can type directly.</p></div></article><article><span>02</span><div><h3 data-i18n="stepTwoTitle">The model finds a category</h3><p data-i18n="stepTwoText">A multilingual text classifier compares wording with learned incident examples.</p></div></article><article><span>03</span><div><h3 data-i18n="stepThreeTitle">Structured records add context</h3><p data-i18n="stepThreeText">The category retrieves date-aware law data and practical guidance. AI does not invent the punishment.</p></div></article></div>
     </section>
 
-    <aside class="legal-notice page-width">
-      <strong data-i18n="important">Important:</strong>
-      <span data-i18n="notice">This educational tool cannot file a complaint, replace police assistance, or provide legal advice. Contact emergency services if anyone is in immediate danger.</span>
-    </aside>
+    <section id="responsible-ai" class="responsible-section">
+      <div class="page-width responsible-grid"><div><span class="eyebrow" data-i18n="responsibleEyebrow">Responsible AI boundary</span><h2 data-i18n="responsibleTitle">Useful guidance without pretending to be a lawyer.</h2></div><div class="responsible-points"><p><strong data-i18n="responsibleOneTitle">Category prediction</strong><span data-i18n="responsibleOneText">The model provides a preliminary category and alternatives.</span></p><p><strong data-i18n="responsibleTwoTitle">Verified legal layer</strong><span data-i18n="responsibleTwoText">Sections and punishments come from maintained records linked to official sources.</span></p><p><strong data-i18n="responsibleThreeTitle">Human decision required</strong><span data-i18n="responsibleThreeText">Police, lawyers and courts determine the actual legal outcome.</span></p></div></div>
+    </section>
   </main>
 
-  <footer><span>NyayaAI</span> · <span data-i18n="footerText">Built for multilingual legal awareness</span></footer>
+  <footer><div class="page-width"><div class="brand footer-brand"><span class="brand-mark" aria-hidden="true">न्या</span><span>Nyaya<span>AI</span></span></div><p data-i18n="footerText">A final-year engineering project for accessible and responsible legal awareness.</p><div><a href="https://www.mha.gov.in/en/commoncontent/new-criminal-laws" target="_blank" rel="noopener noreferrer">MHA New Criminal Laws</a><a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Cybercrime Portal</a><a href="https://nalsa.gov.in/" target="_blank" rel="noopener noreferrer">NALSA Legal Aid</a></div></div></footer>
 
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
   <script>
     window.serverResult = {{ server_result | default(none) | tojson }};
     window.submittedLanguage = {{ submitted_language | default("en") | tojson }};
   </script>
-  <script src="{{ url_for('static', path='/app.js') }}?v=3.0.1" defer></script>
+  <script src="{{ url_for('static', path='/app.js') }}?v=4.0.0" defer></script>
 </body>
 </html>
