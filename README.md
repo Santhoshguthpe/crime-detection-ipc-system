@@ -1,115 +1,117 @@
-# 📌 Crime Detection & IPC Section Prediction System
+# Multilingual Crime Classification Assistant
 
-## 📖 Overview
+An educational FastAPI application that classifies a written or spoken incident description and retrieves a matching legal reference. Version 2 adds browser voice input, English/Hindi/Telugu support, a trained machine-learning classifier, a JSON API, responsive UI, tests, and explicit legal-safety messaging.
 
-The **Crime Detection & IPC Section Prediction System** is a Natural Language Processing (NLP) based legal-tech application that analyzes crime descriptions written in natural language and predicts the relevant Indian Penal Code (IPC) sections along with punishment details.
+> **Important:** This project is for learning and legal awareness only. It is not a police reporting system and does not provide legal advice. Most reference records in the current dataset use legacy IPC numbering. India's BNS, BNSS, and BSA came into force on **1 July 2024**, so every legal result must be independently verified.
 
-This system bridges the gap between common language descriptions and formal legal classification.
+## What changed in v2
 
----
+- Voice-to-text button using the browser Speech Recognition API
+- Language selector for English (`en-IN`), Hindi (`hi-IN`), and Telugu (`te-IN`)
+- Multilingual interface and crime-category labels
+- Supervised TF-IDF + logistic-regression classifier trained at startup
+- Top predictions with a confidence score and low-confidence rejection
+- FastAPI JSON endpoint at `POST /api/analyze`
+- Input limits, safe DOM rendering, health endpoint, responsive design, and tests
+- No API key and no paid service required
 
-## 🎯 Objectives
+## Architecture
 
-- Automate crime classification based on text input  
-- Provide IPC section details  
-- Display punishment, bailable status, and cognizable status  
-- Improve legal awareness  
+```text
+Voice or typed description
+          |
+          v
+Browser speech-to-text + language selection
+          |
+          v
+FastAPI validation -> Multilingual ML classifier
+          |                    |
+          |                    +-> category + confidence
+          v
+Structured legal reference lookup
+          |
+          v
+Result + legal disclaimer
+```
 
----
+The model classifies the incident. Structured data remains the source for section numbers, punishment, bail, and cognizable status. A generative model is intentionally not used for legal facts because it can invent or mix legal provisions.
 
-## 💻 Tech Stack
+## Project structure
 
-- Python  
-- FastAPI  
-- spaCy (NLP)  
-- Uvicorn  
-- HTML  
-- Jinja2  
-- JSON  
-
----
-
-## 🏗 Project Architecture
-
-The system follows a **layered architecture**:
-
-- **Presentation Layer** – HTML + Jinja2  
-- **Application Logic Layer** – FastAPI + NLP engine  
-- **Data Layer** – JSON files (IPC data + keyword mapping)  
-
----
-
-## 🔄 Working Flow
-
-1. User enters crime description  
-2. FastAPI receives input  
-3. spaCy processes text  
-4. Keywords matched with JSON  
-5. Crime detected  
-6. IPC details retrieved  
-7. Result displayed  
-
----
-
-## 📂 Project Structure
-
-crime_predictor/
-│
+```text
+.
 ├── main.py
 ├── crime_detector.py
 ├── ipc_data.json
 ├── keyword_mapper.json
-├── templates/
-│ └── index.html
+├── multilingual_examples.json
+├── requirements.txt
 ├── static/
-│ └── styles.css
-└── README.md
+│   ├── app.js
+│   └── styles.css
+├── templates/
+│   └── index.html
+└── tests/
+    └── test_classifier.py
+```
 
+## Installation
 
----
-
-## ⚙ Installation & Setup
-
-### 1️⃣ Clone Repository
+Python 3.10 or newer is recommended.
 
 ```bash
-git clone https://github.com/yourusername/crime-detection-ipc-system.git
-2️⃣ Install Dependencies
-pip install fastapi uvicorn spacy jinja2
-python -m spacy download en_core_web_sm
-3️⃣ Run the Application
-uvicorn main:app --reload
-4️⃣ Open in Browser
-http://127.0.0.1:8000
-✅ Features
-NLP-based text processing
+git clone https://github.com/Santhoshguthpe/crime-detection-ipc-system.git
+cd crime-detection-ipc-system
 
-Automatic IPC section prediction
+python -m venv venv
+```
 
-Displays punishment details
+Windows:
 
-Modular and scalable design
+```powershell
+venv\Scripts\activate
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
 
-Easy to update legal database
+macOS/Linux:
 
-⚠ Limitations
-Keyword-based detection
+```bash
+source venv/bin/activate
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
 
-English language support only
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). API documentation is available at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
-Single crime prediction
+Voice input works best in current Chrome or Edge. Browsers normally permit microphone access on `localhost` or an HTTPS deployment.
 
-🚀 Future Enhancements
-Machine Learning integration
+## API example
 
-Multi-language support
+```bash
+curl -X POST http://127.0.0.1:8000/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"description":"चाकू दिखाकर पैसे लूट लिए","language":"hi"}'
+```
 
-Database integration
+## Run tests
 
-Cloud deployment
+```bash
+python -m pytest -q
+```
 
-Multi-crime classification
+## How the model works
 
-📌 Disclaimer
-This project is developed for educational and analytical purposes only. It does not replace professional legal advice.
+1. English examples are loaded from `keyword_mapper.json`.
+2. Hindi and Telugu examples and labels are loaded from `multilingual_examples.json`.
+3. Word and character n-gram TF-IDF features are created.
+4. Logistic regression learns the crime categories.
+5. The API returns the best category only when its score passes a minimum threshold.
+6. The category key is used to retrieve legal reference data from `ipc_data.json`.
 
+This is a compact baseline suitable for a student project. A production system would need a lawyer-reviewed BNS dataset, a much larger anonymised training corpus, offline speech recognition, model evaluation by language and category, authentication, rate limiting, audit logs, encryption, and a human-review workflow.
+
+## Official legal sources
+
+- [Ministry of Home Affairs — New Criminal Laws](https://www.mha.gov.in/en/commoncontent/new-criminal-laws)
+- [India Code — Bharatiya Nyaya Sanhita, 2023](https://www.indiacode.nic.in/bitstream/123456789/20062/1/a202345.pdf)

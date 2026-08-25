@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Multilingual AI-assisted crime category classifier for educational use.">
+  <title>Crime Classification Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">AI-assisted · Educational use</span>
+        <h1 data-i18n="title">Crime Classification Assistant</h1>
+        <p data-i18n="subtitle">Describe an incident by typing or speaking in English, Hindi, or Telugu.</p>
+      </div>
+      <label class="language-picker">
+        <span data-i18n="language">Language</span>
+        <select id="language" name="language" form="analysis-form">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="te">తెలుగు</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="card input-card">
+      <form id="analysis-form" action="/analyze" method="post">
+        <label for="description" data-i18n="descriptionLabel">Incident description</label>
+        <div class="input-wrap">
+          <textarea id="description" name="description" minlength="3" maxlength="2000" required
+            data-i18n-placeholder="placeholder" placeholder="Example: A person threatened me with a knife and took my phone.">{{ submitted_description or '' }}</textarea>
+          <button id="voice-button" class="voice-button" type="button" aria-label="Start voice input" title="Start voice input">
+            <span aria-hidden="true">🎙️</span>
+            <span id="voice-label" data-i18n="speak">Speak</span>
+          </button>
+        </div>
+        <div class="form-footer">
+          <p id="voice-status" class="status" aria-live="polite"></p>
+          <button id="analyze-button" class="primary-button" type="submit" data-i18n="analyze">Analyze incident</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="loading" class="card loading" hidden aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span>
+      <span data-i18n="analyzing">Analyzing the description…</span>
+    </section>
+
+    <section id="error-card" class="card error-card" hidden role="alert">
+      <h2 data-i18n="needDetails">More details needed</h2>
+      <p id="error-message"></p>
+    </section>
+
+    <section id="result-card" class="card result-card" hidden aria-live="polite">
+      <div class="result-heading">
+        <div>
+          <span class="eyebrow" data-i18n="prediction">Model prediction</span>
+          <h2 id="crime-name"></h2>
+        </div>
+        <span id="confidence" class="confidence"></span>
+      </div>
+      <dl class="result-grid">
+        <div><dt data-i18n="section">Legal section</dt><dd id="section"></dd></div>
+        <div><dt data-i18n="punishment">Punishment</dt><dd id="punishment"></dd></div>
+        <div><dt data-i18n="bailable">Bailable</dt><dd id="bailable"></dd></div>
+        <div><dt data-i18n="cognizable">Cognizable</dt><dd id="cognizable"></dd></div>
+      </dl>
+      <div class="description-box">
+        <h3 data-i18n="meaning">Reference description</h3>
+        <p id="reference-description"></p>
+      </div>
+      <p id="disclaimer" class="disclaimer"></p>
+    </section>
+
+    <aside class="legal-notice">
+      <strong data-i18n="important">Important:</strong>
+      <span data-i18n="notice">This is an academic prototype. India’s BNS/BNSS laws came into force on 1 July 2024; always verify current law.</span>
+    </aside>
+  </main>
+
+  <script>
+    window.serverResult = {{ server_result | default(none) | tojson }};
+    window.submittedLanguage = {{ submitted_language | default("en") | tojson }};
+  </script>
+  <script src="{{ url_for('static', path='/app.js') }}" defer></script>
+</body>
+</html>
