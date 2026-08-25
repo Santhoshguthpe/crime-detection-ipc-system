@@ -27,6 +27,66 @@ templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 with open(os.path.join(BASE_DIR, "ipc_data.json"), "r", encoding="utf-8") as file:
     legal_reference = json.load(file)
 
+with open(os.path.join(BASE_DIR, "bns_updates.json"), "r", encoding="utf-8") as file:
+    bns_config = json.load(file)
+
+bns_meta = bns_config["meta"]
+bns_updates = bns_config["updates"]
+
+SPECIAL_LAWS = {
+    "domestic violence": "Protection of Women from Domestic Violence Act, 2005",
+    "corruption": "Prevention of Corruption Act, 1988",
+    "hacking": "Information Technology Act, 2000",
+    "cyber fraud": "Information Technology Act, 2000",
+    "identity theft": "Information Technology Act, 2000",
+    "drug trafficking": "Narcotic Drugs and Psychotropic Substances Act, 1985",
+}
+
+
+def build_legal_reference(crime: str) -> dict[str, Any]:
+    """Combine the original category record with lawyer-verifiable current-law data."""
+    original = legal_reference.get(crime)
+    if not original:
+        raise HTTPException(status_code=500, detail="Legal reference is missing for this category.")
+
+    reference = dict(original)
+    update = bns_updates.get(crime)
+    if update:
+        reference.update(update)
+        reference.update(
+            {
+                "effective_from": bns_meta["effective_from"],
+                "source_title": bns_meta["source_title"],
+                "source_url": bns_meta["source_url"],
+                "law_notice": bns_meta["notice"],
+                "bailable": "Verify under the applicable BNSS schedule",
+                "cognizable": "Verify under the applicable BNSS schedule",
+            }
+        )
+    else:
+        reference.setdefault("law", SPECIAL_LAWS.get(crime, "Applicable special law"))
+        reference.setdefault("legacy_section", None)
+        reference.setdefault(
+            "consequences",
+            [
+                f"The stated statutory range is: {reference['punishment']}.",
+                "The exact charge and sentence depend on the facts, evidence and applicable amendments.",
+                "Connected offences or aggravated circumstances may change the legal outcome.",
+            ],
+        )
+        reference.setdefault("source_title", None)
+        reference.setdefault("source_url", None)
+        reference.setdefault(
+            "law_notice",
+            "This category is governed by a special law or a provision not replaced by the BNS overlay.",
+        )
+
+    reference["classification_note"] = (
+        "Bail and cognizable status are indicative. The exact classification can depend on the "
+        "subsection, facts, amendments and procedural law."
+    )
+    return reference
+
 
 class AnalysisRequest(BaseModel):
     description: str = Field(min_length=3, max_length=2000)
@@ -52,9 +112,7 @@ def analyze_description(description: str, language: str) -> dict[str, Any]:
         }
 
     best = predictions[0]
-    reference = legal_reference.get(best.crime)
-    if not reference:
-        raise HTTPException(status_code=500, detail="Legal reference is missing for this category.")
+    reference = build_legal_reference(best.crime)
 
     return {
         "matched": True,
@@ -63,9 +121,10 @@ def analyze_description(description: str, language: str) -> dict[str, Any]:
         "alternatives": [prediction.to_dict() for prediction in predictions[1:]],
         "legal_reference": reference,
         "disclaimer": (
-            "Educational prediction only, not legal advice. The stored dataset contains legacy IPC "
-            "and special-law references. For incidents on or after 1 July 2024, verify the "
-            "applicable BNS/BNSS provisions with an authorised legal professional."
+            "Educational prediction only, not legal advice or a sentencing decision. Current BNS "
+            "references are shown for incidents on or after 1 July 2024, subject to the savings "
+            "clause; older incidents may continue under IPC. Verify every result with a qualified "
+            "Indian legal professional."
         ),
     }
 

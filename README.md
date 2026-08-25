@@ -1,16 +1,19 @@
 # Multilingual Crime Classification Assistant
 
-An educational FastAPI application that classifies a written or spoken incident description and retrieves a matching legal reference. Version 2 adds browser voice input, English/Hindi/Telugu support, a trained machine-learning classifier, a JSON API, responsive UI, tests, and explicit legal-safety messaging.
+An educational FastAPI application that classifies a written or spoken incident description and retrieves a matching legal reference. Version 3 includes duplicate-safe browser voice input, English/Hindi/Telugu support, a trained machine-learning classifier, current BNS reference overlays, a JSON API, a redesigned responsive UI, tests, and explicit legal-safety messaging.
 
-> **Important:** This project is for learning and legal awareness only. It is not a police reporting system and does not provide legal advice. Most reference records in the current dataset use legacy IPC numbering. India's BNS, BNSS, and BSA came into force on **1 July 2024**, so every legal result must be independently verified.
+> **Important:** This project is for learning and legal awareness only. It is not a police reporting system and does not provide legal advice. BNS references are shown for covered categories, while legacy IPC context remains available for older incidents. India's BNS, BNSS, and BSA came into force on **1 July 2024**; applicability depends on the incident date, the savings clause, facts, and procedural law, so every result must be independently verified.
 
-## What changed in v2
+## What changed in v3
 
-- Voice-to-text button using the browser Speech Recognition API
+- Voice-to-text using the browser Speech Recognition API, with final-result filtering, per-session deduplication, and double-start protection
 - Language selector for English (`en-IN`), Hindi (`hi-IN`), and Telugu (`te-IN`)
 - Multilingual interface and crime-category labels
 - Supervised TF-IDF + logistic-regression classifier trained at startup
 - Top predictions with a confidence score and low-confidence rejection
+- Current BNS section and punishment overlays for 23 covered categories, plus legacy IPC context
+- Structured possible consequences and links to the official Ministry of Home Affairs BNS text
+- Modern legal-tech design, quick examples, accessibility states, and a generated hero illustration
 - FastAPI JSON endpoint at `POST /api/analyze`
 - Input limits, safe DOM rendering, health endpoint, responsive design, and tests
 - No API key and no paid service required
@@ -29,6 +32,7 @@ FastAPI validation -> Multilingual ML classifier
           |                    +-> category + confidence
           v
 Structured legal reference lookup
+ (current BNS overlay + special laws)
           |
           v
 Result + legal disclaimer
@@ -42,11 +46,14 @@ The model classifies the incident. Structured data remains the source for sectio
 .
 ├── main.py
 ├── crime_detector.py
+├── bns_updates.json
 ├── ipc_data.json
 ├── keyword_mapper.json
 ├── multilingual_examples.json
 ├── requirements.txt
 ├── static/
+│   ├── images/
+│   │   └── legal-ai-hero.webp
 │   ├── app.js
 │   └── styles.css
 ├── templates/
@@ -107,9 +114,14 @@ python -m pytest -q
 3. Word and character n-gram TF-IDF features are created.
 4. Logistic regression learns the crime categories.
 5. The API returns the best category only when its score passes a minimum threshold.
-6. The category key is used to retrieve legal reference data from `ipc_data.json`.
+6. The category key retrieves a base record from `ipc_data.json`.
+7. Covered categories are overlaid with current BNS references and consequences from `bns_updates.json`; special-law categories remain under their applicable statute.
 
-This is a compact baseline suitable for a student project. A production system would need a lawyer-reviewed BNS dataset, a much larger anonymised training corpus, offline speech recognition, model evaluation by language and category, authentication, rate limiting, audit logs, encryption, and a human-review workflow.
+The model never generates punishment text. It only predicts a category; sections, statutory ranges, and consequence notes come from structured records. This avoids treating generative output as a legal source.
+
+This is a compact baseline suitable for a student project. A production system would still need a lawyer-reviewed and versioned legal dataset, a much larger anonymised training corpus, offline speech recognition, model evaluation by language and category, authentication, rate limiting, audit logs, encryption, and a human-review workflow.
+
+The hero artwork was produced with OpenAI image generation for this project.
 
 ## Official legal sources
 
