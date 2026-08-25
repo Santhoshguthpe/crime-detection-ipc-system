@@ -18,7 +18,7 @@ MIN_CONFIDENCE = 0.06
 
 app = FastAPI(
     title="Multilingual Crime Classification Assistant",
-    version="2.0.0",
+    version="3.0.1",
     description="Educational multilingual crime-category prediction API.",
 )
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")

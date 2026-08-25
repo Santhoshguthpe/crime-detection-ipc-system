@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NyayaAI: multilingual voice-assisted crime category and Indian legal reference explorer.">
   <title>NyayaAI · Crime & Law Assistant</title>
-  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}?v=3.0.1">
 </head>
 <body>
   <header class="site-header">
@@ -41,7 +41,7 @@
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="visual-glow"></div>
-        <img src="{{ url_for('static', path='/images/legal-ai-hero.webp') }}" alt="" width="1200" height="800">
+        <img src="{{ url_for('static', path='/images/legal-ai-hero.webp') }}?v=3.0.1" alt="" width="600" height="400">
       </div>
     </section>
 
@@ -164,6 +164,6 @@
     window.serverResult = {{ server_result | default(none) | tojson }};
     window.submittedLanguage = {{ submitted_language | default("en") | tojson }};
   </script>
-  <script src="{{ url_for('static', path='/app.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/app.js') }}?v=3.0.1" defer></script>
 </body>
 </html>
